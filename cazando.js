@@ -20,16 +20,18 @@ const ALTO_COMIDA = 30;
 function graficarGato() {
   // Implementación de la función
   // Color del gato 
-  ctx.fillStyle = 'blue';
+ // ctx.fillStyle = 'blue';
   // Dibuja un rectangulo centrado 
-  ctx.fillRect(gatoX, gatoY, ANCHO_GATO, ALTO_GATO); 
+  //*ctx.fillRect(gatoX, gatoY, ANCHO_GATO, ALTO_GATO); 
+  graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, 'blue');
 }
 function graficarComida(){
   // Implementacion de la funcion 
   // color de la comida
-  ctx.fillStyle = "red";
+  //ctx.fillStyle = "red";
   // Dibuja un cuadrado en la esquina superior izquierda
-  ctx.fillRect(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+  //*ctx.fillRect(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+  graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, 'red');
 }
 function iniciarJuego(){
   //calcular posicion para gato centrado 
@@ -42,4 +44,10 @@ function iniciarJuego(){
   graficarGato();
   graficarComida();
 }
+ // funcion encargada de dibujar cualquier rectangulo 
+function graficarRectangulo(x, y, ancho, alto, color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x, y, ancho, alto);
+}
+
 
