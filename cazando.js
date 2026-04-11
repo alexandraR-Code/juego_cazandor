@@ -49,5 +49,14 @@ function graficarRectangulo(x, y, ancho, alto, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, ancho, alto);
 }
-
-
+// Funcion que limpia el area de canvas
+function limpiarCanvas() {
+  //Limpia un rectángulo que empiece en la esquina (0,0) y llegue hasta el ancho y alto total
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+function moverIzquierda(){
+  gatoX = gatoX -10;
+  limpiarCanvas();
+  graficarGato();
+  graficarComida();
+}
