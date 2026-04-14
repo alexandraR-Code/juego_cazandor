@@ -91,7 +91,6 @@ function detectarColision(){
       gatoX + ANCHO_GATO > comidaX &&
       gatoY < comidaY + ALTO_COMIDA &&
       gatoY + ALTO_GATO > comidaY) {
-    alert("¡Atrapaste la comida!");
     
     puntos = puntos + 1;
     mostrarEnSpan("puntaje", puntos);
