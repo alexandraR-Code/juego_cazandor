@@ -1,1 +1,1 @@
-Actúa como un diseñador web. Mejora el aspecto visual de mi juego 'Cazando' modificando solo el HTML y el CSS. Quiero que se vea moderno, con colores atractivos y una buena disposición de los elementos. No toques el código JavaScript.
+Actúa como un diseñador web experto. Quiero mejorar la interfaz gráfica de mi juego 'Cazando' para que sea moderna, estética (estilo aesthetic/pastel) y profesional. Solo puedes modificar el código HTML y CSS; no realices ningún cambio en el archivo JavaScript. Proporcióname el código completo para ambos archivos

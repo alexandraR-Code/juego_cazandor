@@ -1,168 +1,465 @@
-/* Importamos una fuente más dulce y moderna */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+/* =====================================================
+   CAZANDO — Aesthetic Pastel UI
+   Diseño: Soft Dreamy Pastel con detalles elegantes
+   ===================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap');
+
+/* ── Variables ──────────────────────────────────────── */
 :root {
-  --fondo: #fff5f8;
-  --principal: #ff85a1; /* Rosa vibrante */
-  --secundario: #b693fe; /* Lila */
-  --acento: #a2d2ff; /* Celeste pastel */
-  --blanco: #ffffff;
-  --texto: #5d4a66;
+  --rosa:       #f9a8c9;
+  --rosa-deep:  #f472a8;
+  --rosa-soft:  #fde8f1;
+  --lila:       #c9b3f5;
+  --lila-deep:  #a78bfa;
+  --lila-soft:  #ede9fd;
+  --menta:      #a8d8c8;
+  --menta-deep: #6bbda0;
+  --menta-soft: #e0f5ef;
+  --amarillo:   #fde68a;
+  --azul-soft:  #bfdbfe;
+  --blanco:     #ffffff;
+  --fondo:      #fdf4f9;
+  --texto:      #6b4f72;
+  --texto-soft: #b09ab8;
+  --sombra:     rgba(200, 140, 180, 0.25);
+  --radio-lg:   28px;
+  --radio-md:   16px;
+  --radio-sm:   10px;
+}
+
+/* ── Reset & Base ───────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Fredoka', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background-color: var(--fondo);
-  /* Un fondo con círculos suaves para que no sea plano */
-  background-image: radial-gradient(#ffdeeb 2px, transparent 2px);
-  background-size: 30px 30px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  padding: 20px;
   color: var(--texto);
+  overflow-x: hidden;
+  position: relative;
 }
 
-.game-container {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 40px;
-  box-shadow: 0 20px 0px #f0d1db, 0 30px 50px rgba(0,0,0,0.1);
-  border: 4px solid var(--blanco);
-  max-width: 850px;
+/* ── Blobs decorativos de fondo ─────────────────────── */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatBlob 8s ease-in-out infinite alternate;
+}
+.blob-1 {
+  width: 380px; height: 380px;
+  background: var(--rosa);
+  top: -100px; left: -100px;
+  animation-delay: 0s;
+}
+.blob-2 {
+  width: 300px; height: 300px;
+  background: var(--lila);
+  top: 40%; right: -80px;
+  animation-delay: 2s;
+}
+.blob-3 {
+  width: 250px; height: 250px;
+  background: var(--menta);
+  bottom: -60px; left: 30%;
+  animation-delay: 4s;
+}
+.blob-4 {
+  width: 200px; height: 200px;
+  background: var(--amarillo);
+  bottom: 10%; left: -60px;
+  animation-delay: 1.5s;
+}
+@keyframes floatBlob {
+  from { transform: translateY(0px) scale(1); }
+  to   { transform: translateY(20px) scale(1.05); }
 }
 
-/* Encabezado */
-header h1 {
+/* ── Contenedor principal ───────────────────────────── */
+.game-wrapper {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-radius: 36px;
+  padding: 32px 36px 28px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow:
+    0 8px 32px var(--sombra),
+    0 2px 8px rgba(255, 180, 200, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 10px;
+}
+
+.header-deco {
+  font-size: 1.4rem;
+  color: var(--rosa-deep);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.header-center {
+  text-align: center;
+  flex: 1;
+}
+
+.game-title {
+  font-family: 'Baloo 2', cursive;
   font-size: 2.8rem;
-  margin: 0;
-  color: var(--principal);
-  text-shadow: 3px 3px 0px var(--blanco), 5px 5px 0px #ffdeeb;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--rosa-deep) 0%, var(--lila-deep) 60%, var(--menta-deep) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.title-icon {
+  -webkit-text-fill-color: initial;
+  font-size: 2rem;
 }
 
 .author {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: var(--secundario);
+  font-size: 0.88rem;
+  color: var(--texto-soft);
   font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
 }
 
+/* ── Layout principal ───────────────────────────────── */
 .main-layout {
   display: flex;
-  gap: 30px;
-  justify-content: center;
+  gap: 28px;
+  align-items: flex-start;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Área del Juego */
-canvas {
-  background: var(--blanco);
-  border: 10px solid var(--acento);
-  border-radius: 30px;
-  box-shadow: 0 10px 0px #8eb9e4;
+/* ── Canvas ─────────────────────────────────────────── */
+.game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
+
+.canvas-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+canvas {
+  display: block;
+  background: linear-gradient(145deg, #fff8fc 0%, #f0f9ff 100%);
+  border-radius: 22px;
+  border: 2.5px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 12px 36px rgba(200, 140, 180, 0.2),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* Esquinas decorativas del canvas */
+.canvas-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--rosa-deep);
+  border-style: solid;
+  opacity: 0.6;
+}
+.c-tl { top: 8px;  left: 8px;  border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
+.c-tr { top: 8px;  right: 8px; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
+.c-bl { bottom: 8px; left: 8px;  border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
+.c-br { bottom: 8px; right: 8px; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
 
 #mensaje {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--principal);
-  height: 25px;
-  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--rosa-deep);
+  min-height: 22px;
+  letter-spacing: 0.3px;
 }
 
-/* Panel de Puntos y Tiempo */
+/* ── Sidebar ─────────────────────────────────────────── */
 .sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-width: 220px;
+  gap: 14px;
+  min-width: 210px;
+  max-width: 230px;
+  flex: 1;
 }
 
-.panel {
+/* ── Stats Panel ────────────────────────────────────── */
+.stats-panel {
   background: var(--blanco);
-  padding: 15px;
-  border-radius: 20px;
-  border: 2px solid #eee;
-  margin-bottom: 10px;
+  border-radius: var(--radio-lg);
+  padding: 18px 16px;
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  box-shadow: 0 5px 0px #eee;
+  gap: 8px;
+  box-shadow: 0 4px 16px var(--sombra);
+  border: 1.5px solid var(--rosa-soft);
 }
 
-.stat-box {
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-icon {
+  font-size: 1.3rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--texto-soft);
+}
+
+.stat-value {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--rosa-deep), var(--lila-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-divider {
+  width: 1.5px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--rosa) 50%, transparent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Objective Card ─────────────────────────────────── */
+.objective-card {
+  background: linear-gradient(135deg, var(--lila-soft) 0%, var(--menta-soft) 100%);
+  border-radius: var(--radio-md);
+  padding: 12px 16px;
+  border: 1.5px solid var(--lila);
   text-align: center;
 }
 
-.label {
-  display: block;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  color: #aaa;
-  font-weight: bold;
+.objective-text {
+  font-size: 0.85rem;
+  color: var(--texto);
+  line-height: 1.5;
+  font-weight: 600;
 }
 
-#puntaje, #tiempo {
-  font-size: 1.8rem;
-  color: var(--principal);
-  font-weight: bold;
+.objective-text strong {
+  color: var(--lila-deep);
 }
 
-/* Controles D-PAD (Estilo Joypad) */
+/* ── Controles / D-Pad ──────────────────────────────── */
 .controles {
-  background: #fdf0f5;
-  padding: 20px;
-  border-radius: 30px;
-  margin: 15px 0;
+  background: var(--blanco);
+  border-radius: var(--radio-lg);
+  padding: 18px 16px;
+  box-shadow: 0 4px 16px var(--sombra);
+  border: 1.5px solid var(--lila-soft);
+}
+
+.controles-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--texto-soft);
+  text-align: center;
+  margin-bottom: 14px;
 }
 
 .d-pad {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.middle-row {
-  display: flex;
-  gap: 8px;
-}
-
-button {
-  background: var(--blanco);
-  border: none;
-  width: 55px;
-  height: 55px;
-  border-radius: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--secundario);
-  box-shadow: 0 5px 0px #e0d0f0;
-  transition: all 0.1s;
+.d-row {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 6px;
 }
 
-button:active {
+/* Botones direccionales */
+.btn-dir {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  background: var(--blanco);
+  color: var(--lila-deep);
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow:
+    0 5px 0 var(--lila),
+    0 6px 12px rgba(167, 139, 250, 0.2);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 1.5px solid var(--lila-soft);
+}
+
+.btn-dir:hover {
+  background: var(--lila-soft);
+  color: var(--lila-deep);
+}
+
+.btn-dir:active {
   transform: translateY(4px);
-  box-shadow: 0 1px 0px #e0d0f0;
+  box-shadow: 0 1px 0 var(--lila), 0 2px 4px rgba(167, 139, 250, 0.2);
 }
 
-/* Botón Reiniciar */
+/* Centro del D-Pad */
+.d-center {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--rosa-soft), var(--lila-soft));
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 2px 4px rgba(200, 160, 220, 0.15);
+}
+
+/* ── Botón Reiniciar ────────────────────────────────── */
 .actions button {
   width: 100%;
-  height: auto;
-  padding: 15px;
-  background: linear-gradient(to right, var(--principal), #ffb3c1);
+  padding: 14px 16px;
+  border: none;
+  border-radius: var(--radio-md);
+  background: linear-gradient(135deg, var(--rosa-deep) 0%, var(--lila-deep) 100%);
   color: white;
-  font-weight: bold;
+  font-family: 'Baloo 2', cursive;
   font-size: 1.1rem;
-  border-radius: 20px;
-  box-shadow: 0 6px 0px #d66d85;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 6px 0 #c05a8a,
+    0 8px 20px rgba(200, 100, 160, 0.3);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .actions button:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.08);
+}
+
+.actions button:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px 0 #c05a8a, 0 3px 8px rgba(200, 100, 160, 0.2);
+}
+
+.btn-restart-icon {
+  font-size: 1.3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.actions button:hover .btn-restart-icon {
+  transform: rotate(-180deg);
+}
+
+/* ── Footer ─────────────────────────────────────────── */
+.game-footer {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: var(--texto-soft);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 700px) {
+  .game-wrapper {
+    padding: 24px 18px 20px;
+    border-radius: 24px;
+  }
+
+  .game-title {
+    font-size: 2rem;
+  }
+
+  canvas {
+    width: 300px;
+    height: 300px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .sidebar {
+    max-width: 100%;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stats-panel {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .objective-card {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .controles {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+  }
 }
