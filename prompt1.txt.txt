@@ -1,0 +1,1 @@
+Actúa como un diseñador web. Mejora el aspecto visual de mi juego 'Cazando' modificando solo el HTML y el CSS. Quiero que se vea moderno, con colores atractivos y una buena disposición de los elementos. No toques el código JavaScript.

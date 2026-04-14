@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, scale=1.0">
   <link rel="stylesheet" href="cazando.css"/>
   <title>Juego Cazando</title>
 
 </head>
 <body onload="iniciarJuego();">
 
+  <div class="game-container">
+    <header>
   <h1>Juego Cazando</h1>
-  <p>Autor: Alexandra Ramírez</p>
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+  <p class="author">Autor: Alexandra Ramírez</p>
+    </header>
+
+    <div class="main-layout">
+      <section class="game-section">
+        <canvas id="areaJuego" width="500" height="500"></canvas>
+        <p id="mensaje"></p>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="stat-box">
+            <span class="label">PUNTOS</span>
+            <span id="puntaje">0</span>
+          </div>
+        </div>
 
   <div class="controles">
+    <div class="d-pad">
     <button onclick="moverArriba();">⬆</button>
-    <br>
+    <div class="middle-row">
     <button onclick="moverIzquierda();">⬅</button>
     <button onclick="moverAbajo();">⬇</button>
     <button onclick="moverDerecha();">➡</button>
+  </div>
+  </div>
   </div>
 
 
@@ -25,8 +46,11 @@
     <span>Tiempo: <span id="tiempo">10</span></span>
   
   </div>
-  <div class="reiniciar">
+  <div class="actions">
     <button id="reiniciar"onclick="reiniciarJuego();">REINICIAR</button>
+  </div>
+      </aside>
+    </div>
   </div>
 
   <p id="mensaje"></p>
