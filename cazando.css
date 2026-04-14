@@ -1,465 +1,121 @@
-/* =====================================================
-   CAZANDO — Aesthetic Pastel UI
-   Diseño: Soft Dreamy Pastel con detalles elegantes
-   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600;700&display=swap');
-
-/* ── Variables ──────────────────────────────────────── */
-:root {
-  --rosa:       #f9a8c9;
-  --rosa-deep:  #f472a8;
-  --rosa-soft:  #fde8f1;
-  --lila:       #c9b3f5;
-  --lila-deep:  #a78bfa;
-  --lila-soft:  #ede9fd;
-  --menta:      #a8d8c8;
-  --menta-deep: #6bbda0;
-  --menta-soft: #e0f5ef;
-  --amarillo:   #fde68a;
-  --azul-soft:  #bfdbfe;
-  --blanco:     #ffffff;
-  --fondo:      #fdf4f9;
-  --texto:      #6b4f72;
-  --texto-soft: #b09ab8;
-  --sombra:     rgba(200, 140, 180, 0.25);
-  --radio-lg:   28px;
-  --radio-md:   16px;
-  --radio-sm:   10px;
-}
-
-/* ── Reset & Base ───────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
+/* RESET */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* FONDO */
 body {
-  font-family: 'Nunito', sans-serif;
-  background-color: var(--fondo);
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
+
+  background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba") no-repeat center/cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  color: var(--texto);
-  overflow-x: hidden;
-  position: relative;
 }
 
-/* ── Blobs decorativos de fondo ─────────────────────── */
-.bg-blob {
+/* CAPA OSCURA */
+.bg {
   position: fixed;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.45;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
   z-index: 0;
-  animation: floatBlob 8s ease-in-out infinite alternate;
-}
-.blob-1 {
-  width: 380px; height: 380px;
-  background: var(--rosa);
-  top: -100px; left: -100px;
-  animation-delay: 0s;
-}
-.blob-2 {
-  width: 300px; height: 300px;
-  background: var(--lila);
-  top: 40%; right: -80px;
-  animation-delay: 2s;
-}
-.blob-3 {
-  width: 250px; height: 250px;
-  background: var(--menta);
-  bottom: -60px; left: 30%;
-  animation-delay: 4s;
-}
-.blob-4 {
-  width: 200px; height: 200px;
-  background: var(--amarillo);
-  bottom: 10%; left: -60px;
-  animation-delay: 1.5s;
-}
-@keyframes floatBlob {
-  from { transform: translateY(0px) scale(1); }
-  to   { transform: translateY(20px) scale(1.05); }
 }
 
-/* ── Contenedor principal ───────────────────────────── */
+/* CONTENEDOR */
 .game-wrapper {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  border-radius: 36px;
-  padding: 32px 36px 28px;
-  max-width: 900px;
-  width: 100%;
-  box-shadow:
-    0 8px 32px var(--sombra),
-    0 2px 8px rgba(255, 180, 200, 0.15),
-    inset 0 1px 0 rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 900px;
+  color: white;
 }
 
-/* ── Header ─────────────────────────────────────────── */
+/* HEADER */
 .game-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 28px;
-  gap: 10px;
-}
-
-.header-deco {
-  font-size: 1.4rem;
-  color: var(--rosa-deep);
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-
-.header-center {
   text-align: center;
-  flex: 1;
+  margin-bottom: 20px;
 }
 
-.game-title {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--rosa-deep) 0%, var(--lila-deep) 60%, var(--menta-deep) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.5px;
+.game-header h1 {
+  font-size: 2.5rem;
 }
 
-.title-icon {
-  -webkit-text-fill-color: initial;
-  font-size: 2rem;
+.logo {
+  width: 60px;
+  margin: 10px 0;
 }
 
 .author {
-  font-size: 0.88rem;
-  color: var(--texto-soft);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-top: 4px;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-/* ── Layout principal ───────────────────────────────── */
+/* LAYOUT */
 .main-layout {
   display: flex;
-  gap: 28px;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
 }
 
-/* ── Canvas ─────────────────────────────────────────── */
-.game-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.canvas-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
+/* CANVAS */
 canvas {
-  display: block;
-  background: linear-gradient(145deg, #fff8fc 0%, #f0f9ff 100%);
-  border-radius: 22px;
-  border: 2.5px solid rgba(255, 255, 255, 0.8);
-  box-shadow:
-    0 12px 36px rgba(200, 140, 180, 0.2),
-    inset 0 1px 0 rgba(255,255,255,0.9);
+  border-radius: 15px;
+  border: 3px solid white;
+  background: rgba(255,255,255,0.1);
 }
 
-/* Esquinas decorativas del canvas */
-.canvas-corner {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-color: var(--rosa-deep);
-  border-style: solid;
-  opacity: 0.6;
-}
-.c-tl { top: 8px;  left: 8px;  border-width: 3px 0 0 3px; border-radius: 4px 0 0 0; }
-.c-tr { top: 8px;  right: 8px; border-width: 3px 3px 0 0; border-radius: 0 4px 0 0; }
-.c-bl { bottom: 8px; left: 8px;  border-width: 0 0 3px 3px; border-radius: 0 0 0 4px; }
-.c-br { bottom: 8px; right: 8px; border-width: 0 3px 3px 0; border-radius: 0 0 4px 0; }
-
-#mensaje {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--rosa-deep);
-  min-height: 22px;
-  letter-spacing: 0.3px;
-}
-
-/* ── Sidebar ─────────────────────────────────────────── */
+/* SIDEBAR */
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  min-width: 210px;
-  max-width: 230px;
-  flex: 1;
+  gap: 15px;
 }
 
-/* ── Stats Panel ────────────────────────────────────── */
-.stats-panel {
-  background: var(--blanco);
-  border-radius: var(--radio-lg);
-  padding: 18px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  gap: 8px;
-  box-shadow: 0 4px 16px var(--sombra);
-  border: 1.5px solid var(--rosa-soft);
-}
-
-.stat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.stat-icon {
-  font-size: 1.3rem;
-}
-
-.stat-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--texto-soft);
-}
-
-.stat-value {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.2rem;
-  font-weight: 800;
-  line-height: 1;
-  background: linear-gradient(135deg, var(--rosa-deep), var(--lila-deep));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.stat-divider {
-  width: 1.5px;
-  height: 48px;
-  background: linear-gradient(to bottom, transparent, var(--rosa) 50%, transparent);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-/* ── Objective Card ─────────────────────────────────── */
-.objective-card {
-  background: linear-gradient(135deg, var(--lila-soft) 0%, var(--menta-soft) 100%);
-  border-radius: var(--radio-md);
-  padding: 12px 16px;
-  border: 1.5px solid var(--lila);
+/* TARJETAS */
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 15px;
+  border-radius: 15px;
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
-.objective-text {
-  font-size: 0.85rem;
-  color: var(--texto);
-  line-height: 1.5;
-  font-weight: 600;
+.stats span {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.objective-text strong {
-  color: var(--lila-deep);
-}
-
-/* ── Controles / D-Pad ──────────────────────────────── */
-.controles {
-  background: var(--blanco);
-  border-radius: var(--radio-lg);
-  padding: 18px 16px;
-  box-shadow: 0 4px 16px var(--sombra);
-  border: 1.5px solid var(--lila-soft);
-}
-
-.controles-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--texto-soft);
-  text-align: center;
-  margin-bottom: 14px;
-}
-
-.d-pad {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.d-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Botones direccionales */
-.btn-dir {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+/* CONTROLES */
+.controles button {
+  margin: 5px;
+  padding: 10px;
   border: none;
-  background: var(--blanco);
-  color: var(--lila-deep);
-  font-size: 1rem;
+  border-radius: 8px;
+  background: white;
   cursor: pointer;
-  box-shadow:
-    0 5px 0 var(--lila),
-    0 6px 12px rgba(167, 139, 250, 0.2);
-  transition: transform 0.08s ease, box-shadow 0.08s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  border: 1.5px solid var(--lila-soft);
 }
 
-.btn-dir:hover {
-  background: var(--lila-soft);
-  color: var(--lila-deep);
-}
-
-.btn-dir:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px 0 var(--lila), 0 2px 4px rgba(167, 139, 250, 0.2);
-}
-
-/* Centro del D-Pad */
-.d-center {
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  background: linear-gradient(135deg, var(--rosa-soft), var(--lila-soft));
-  border-radius: 14px;
-  border: 1.5px solid rgba(255, 255, 255, 0.8);
-  box-shadow: inset 0 2px 4px rgba(200, 160, 220, 0.15);
-}
-
-/* ── Botón Reiniciar ────────────────────────────────── */
-.actions button {
-  width: 100%;
-  padding: 14px 16px;
+/* BOTÓN */
+.btn-restart {
+  padding: 12px;
   border: none;
-  border-radius: var(--radio-md);
-  background: linear-gradient(135deg, var(--rosa-deep) 0%, var(--lila-deep) 100%);
+  border-radius: 12px;
+  background: #ff6b81;
   color: white;
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: bold;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  box-shadow:
-    0 6px 0 #c05a8a,
-    0 8px 20px rgba(200, 100, 160, 0.3);
-  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.15s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
 }
 
-.actions button:hover {
-  filter: brightness(1.08);
-}
-
-.actions button:active {
-  transform: translateY(5px);
-  box-shadow: 0 1px 0 #c05a8a, 0 3px 8px rgba(200, 100, 160, 0.2);
-}
-
-.btn-restart-icon {
-  font-size: 1.3rem;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.actions button:hover .btn-restart-icon {
-  transform: rotate(-180deg);
-}
-
-/* ── Footer ─────────────────────────────────────────── */
-.game-footer {
-  text-align: center;
-  margin-top: 22px;
-  font-size: 0.85rem;
-  color: var(--texto-soft);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* ── Responsive ─────────────────────────────────────── */
-@media (max-width: 700px) {
-  .game-wrapper {
-    padding: 24px 18px 20px;
-    border-radius: 24px;
-  }
-
-  .game-title {
-    font-size: 2rem;
-  }
-
-  canvas {
-    width: 300px;
-    height: 300px;
-  }
-
-  .main-layout {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-  }
-
-  .sidebar {
-    max-width: 100%;
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .stats-panel {
-    flex: 1;
-    min-width: 140px;
-  }
-
-  .objective-card {
-    flex: 1;
-    min-width: 140px;
-  }
-
-  .controles {
-    width: 100%;
-  }
-
-  .actions {
-    width: 100%;
-  }
+.btn-restart:hover {
+  background: #ff4757;
 }

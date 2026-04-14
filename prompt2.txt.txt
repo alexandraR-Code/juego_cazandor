@@ -1,0 +1,14 @@
+PROMPT INICIAL:
+Quiero mejorar la interfaz de mi juego web "Cazando" usando HTML, CSS y JavaScript. Necesito agregar imágenes al proyecto (como personaje o elementos del juego) y también incorporar una imagen de fondo (background) obtenida de internet. El diseño debe ser estético, moderno y con estilo pastel.
+
+PROMPTS ADICIONALES:
+
+1. ¿Cómo puedo agregar una imagen dentro de mi proyecto HTML, ya sea desde internet o desde una carpeta local?
+
+2. ¿Cómo puedo colocar una imagen de fondo en toda la página usando CSS sin dañar el diseño existente?
+
+3. ¿Cómo puedo mejorar la visualización del fondo para que no afecte la legibilidad del contenido (por ejemplo usando transparencia o degradados)?
+
+4. ¿Cómo puedo usar imágenes dentro del canvas en JavaScript para representar un personaje o elementos del juego?
+
+5. ¿Cómo puedo hacer que las imágenes se adapten correctamente al tamaño del canvas o de la pantalla?

@@ -3,104 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cazando.css"/>
+  <link rel="stylesheet" href="cazando.css">
   <title>Cazando 🐾</title>
 </head>
+
 <body onload="iniciarJuego();">
 
-  <!-- Elementos decorativos de fondo -->
-  <div class="bg-blob blob-1"></div>
-  <div class="bg-blob blob-2"></div>
-  <div class="bg-blob blob-3"></div>
-  <div class="bg-blob blob-4"></div>
+  <!-- Fondo decorativo -->
+  <div class="bg"></div>
 
   <div class="game-wrapper">
 
-    <!-- Encabezado -->
+    <!-- HEADER -->
     <header class="game-header">
-      <div class="header-deco">✦</div>
-      <div class="header-center">
-        <h1 class="game-title">
-          <span class="title-icon">🐾</span>
-          Cazando
-          <span class="title-icon">🐾</span>
-        </h1>
-        <p class="author">por Alexandra Ramírez</p>
-      </div>
-      <div class="header-deco">✦</div>
+      <h1>🐾 Cazando 🐾</h1>
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="logo">
+      <p class="author">por Alexandra Ramírez</p>
     </header>
 
-    <!-- Layout principal -->
+    <!-- CONTENIDO -->
     <div class="main-layout">
 
-      <!-- Sección del Canvas -->
+      <!-- CANVAS -->
       <section class="game-section">
-        <div class="canvas-wrapper">
-          <canvas id="areaJuego" width="450" height="450"></canvas>
-          <div class="canvas-corner c-tl"></div>
-          <div class="canvas-corner c-tr"></div>
-          <div class="canvas-corner c-bl"></div>
-          <div class="canvas-corner c-br"></div>
-        </div>
+        <canvas id="areaJuego" width="450" height="450"></canvas>
         <p id="mensaje"></p>
       </section>
 
-      <!-- Panel lateral -->
+      <!-- PANEL -->
       <aside class="sidebar">
 
-        <!-- Stats -->
-        <div class="stats-panel">
-          <div class="stat-card">
-            <span class="stat-icon">⭐</span>
-            <span class="stat-label">Puntos</span>
-            <span class="stat-value" id="puntaje">0</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-card">
-            <span class="stat-icon">⏳</span>
-            <span class="stat-label">Tiempo</span>
-            <span class="stat-value" id="tiempo">10</span>
-          </div>
+        <div class="card stats">
+          <p>⭐ Puntos</p>
+          <span id="puntaje">0</span>
         </div>
 
-        <!-- Objetivo -->
-        <div class="objective-card">
-          <p class="objective-text">🎯 ¡Atrapa <strong>6 comidas</strong> antes de que el tiempo se acabe!</p>
+        <div class="card stats">
+          <p>⏳ Tiempo</p>
+          <span id="tiempo">10</span>
         </div>
 
-        <!-- D-Pad -->
-        <div class="controles">
-          <p class="controles-label">Controles</p>
-          <div class="d-pad">
-            <div class="d-row">
-              <button class="btn-dir btn-up" onclick="moverArriba();" aria-label="Arriba">▲</button>
-            </div>
-            <div class="d-row middle-row">
-              <button class="btn-dir btn-left" onclick="moverIzquierda();" aria-label="Izquierda">◀</button>
-              <div class="d-center">🐱</div>
-              <button class="btn-dir btn-right" onclick="moverDerecha();" aria-label="Derecha">▶</button>
-            </div>
-            <div class="d-row">
-              <button class="btn-dir btn-down" onclick="moverAbajo();" aria-label="Abajo">▼</button>
-            </div>
-          </div>
+        <div class="card objetivo">
+          🎯 Atrapa 6 comidas
         </div>
 
-        <!-- Botón reiniciar -->
-        <div class="actions">
-          <button id="reiniciar" onclick="reiniciarJuego();">
-            <span class="btn-restart-icon">↺</span>
-            Reiniciar
-          </button>
+        <div class="card controles">
+          <button onclick="moverArriba()">▲</button><br>
+          <button onclick="moverIzquierda()">◀</button>
+          <span>🐱</span>
+          <button onclick="moverDerecha()">▶</button><br>
+          <button onclick="moverAbajo()">▼</button>
         </div>
+
+        <button class="btn-restart" onclick="reiniciarJuego()">↺ Reiniciar</button>
 
       </aside>
-    </div>
 
-    <!-- Footer -->
-    <footer class="game-footer">
-      <span>✿ ¡Buena suerte! ✿</span>
-    </footer>
+    </div>
 
   </div>
 
