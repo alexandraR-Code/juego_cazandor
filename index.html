@@ -8,26 +8,21 @@
 </head>
 
 <body onload="iniciarJuego();">
-
+<img src="gato.png" class="gato-bg">
   <div class="game-wrapper">
 
-    <!-- HEADER -->
     <header class="game-header">
       <h1>🐾 Cazando 🐾</h1>
-      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="logo">
       <p class="author">Por: Alexandra Ramírez</p>
     </header>
 
-    <!-- CONTENIDO -->
     <div class="main-layout">
 
-      <!-- CANVAS -->
       <section class="game-section">
         <canvas id="areaJuego" width="450" height="450"></canvas>
         <p id="mensaje"></p>
       </section>
 
-      <!-- PANEL -->
       <aside class="sidebar">
 
         <div class="card stats">
@@ -50,6 +45,7 @@
           <button class="derecha" onclick="moverDerecha()">▶</button>
           <button class="abajo" onclick="moverAbajo()">▼</button>
         </div>
+
         <button class="btn-restart" onclick="reiniciarJuego()">↺ Reiniciar</button>
 
       </aside>
