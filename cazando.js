@@ -38,8 +38,8 @@ function graficarComida(){
 }
 function iniciarJuego(){
   //calcular posicion para gato centrado 
-  gatoX = 0 + ANCHO_GAT0;
-  gatoY = 0 + ALTO_GATO;
+  gatoX = 0 + ALTO_GATO;
+  gatoY = 0 + ANCHO_GATO;
 
   //Calcular posicion para que comida este en la esquina inferior derecha
   comidaX = canvas.width - ANCHO_COMIDA;
