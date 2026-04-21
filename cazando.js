@@ -2,6 +2,11 @@
 const canvas = document.getElementById('areaJuego');
 const ctx = canvas.getContext('2d');
 
+
+// Imagen del gato
+let imagenGato = new Image();
+imagenGato.src = "gato.png";
+
 //Variables inicializadas en cero 
 let gatoX = 0;
 let gatoY = 0;
@@ -27,7 +32,8 @@ function graficarGato() {
  // ctx.fillStyle = 'blue';
   // Dibuja un rectangulo centrado 
   //*ctx.fillRect(gatoX, gatoY, ANCHO_GATO, ALTO_GATO); 
-  graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, 'yellow');
+  ctx.drawImage(imagenGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
+
 }
 function graficarComida(){
   // Implementacion de la funcion 
@@ -46,6 +52,11 @@ function iniciarJuego(){
   comidaX = canvas.width - ANCHO_COMIDA;
   comidaY = canvas.height - ALTO_COMIDA;
   detenerJ = setInterval(restarTiempo, 1000);
+
+  imagenGato.onload = function() {
+  graficarGato();
+}; 
+
   graficarGato();
   graficarComida();
 }

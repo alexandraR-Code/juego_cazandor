@@ -1,0 +1,143 @@
+[33mcommit 4dc047624cf4f2e9ed90e60dd81c3a6786e18cd8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Mon Apr 20 20:54:00 2026 -0500
+
+    feat: reduccion de tiempo
+
+[33mcommit f23846293ca4ac945c5112ebb8769ad878fb99ad[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Mon Apr 20 20:05:37 2026 -0500
+
+    feat: reiniciar tiempo a 15 al atrapar la comida
+
+[33mcommit 078df5820b43b5e68c9d74e6b24eb768969329d4[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Mon Apr 20 19:57:47 2026 -0500
+
+    feat: ajustar tiempo
+
+[33mcommit 1f534df1c64d497dc377c1693b10953adb45a218[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Thu Apr 16 14:35:53 2026 -0500
+
+    cambio de posicion de referencuado de js
+
+[33mcommit 719a277cc20bc6690dcd4e04e887385ee158ea7f[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Thu Apr 16 14:26:28 2026 -0500
+
+    cambio en dimensiones de gato
+
+[33mcommit 3acb7691bb2716844745ec286d5c2bbd03e83066[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Wed Apr 15 16:38:06 2026 -0500
+
+    style: "Cambios en la parte visual con ayuda de ChatGpt"
+
+[33mcommit 94ebb096a5879b8ddd94730a85acc88e12aced24[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Tue Apr 14 16:45:14 2026 -0500
+
+    fix: corrige reinicio del tiempo y error en location.reload()
+
+[33mcommit d5f99b77ecdcda948664037dcebab2010c859677[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Tue Apr 14 16:29:40 2026 -0500
+
+    fix: corrige reinicio del tiempo y error en location.reload()
+
+[33mcommit 2fe003dc087b1a787623439ce89a3157c8df6385[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Tue Apr 14 14:44:54 2026 -0500
+
+    "feat: agrega imágenes, fondo y archivo prompt2.txt con historial de prompts"
+
+[33mcommit b689caaa4af58653fe52945cac725e09af852519[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Tue Apr 14 13:58:14 2026 -0500
+
+    feat: add background, images and prompt2 file
+
+[33mcommit b585c1defdb3c192e13db9eab51f433207159171[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Tue Apr 14 12:34:06 2026 -0500
+
+     feat: "Parte 1: Mejora de interfaz gráfica y registro de prompts"
+
+[33mcommit 216670d546c812756e5f4e9e3d32648bf51f650e[m
+Author: Alexandra Ramirez <alexa090114@gmail.com>
+Date:   Mon Apr 13 20:05:18 2026 -0500
+
+    "Interfaz final mejorada con estilo aesthetic rosa"
+
+[33mcommit 942e63f912cd7b93baa08f17d4df22ef6c41c04c[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Sat Apr 11 17:12:12 2026 -0500
+
+    "feat: implement countdown timer, end-game conditions, and reset system"
+
+[33mcommit 3a1496d51c1aa84f8a0aaab28b61892e4d3f0c84[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Sat Apr 11 17:05:36 2026 -0500
+
+    "feat: Implement countdown timer, end-game conditions, and reset system"
+
+[33mcommit bb004c4f5201e5caf0300060111d14405572fb1a[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Sat Apr 11 13:56:19 2026 -0500
+
+    feat: "Implement a 10-second countdown using setInterval"
+
+[33mcommit 39dc2d4c0ddbd3cff4c0029d8a5b975d88ac27cb[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Sat Apr 11 13:32:23 2026 -0500
+
+    feat: "Complete the scoring system and food repositioning using utilities"
+
+[33mcommit 8c81deb4a0884d2cf390c1afc7dc75f60fd6a9f2[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Sat Apr 11 12:49:09 2026 -0500
+
+    "feat: detect collision between the cat and the food using positions and dimensions"
+
+[33mcommit c006c0165081a42c27aca7bf659266f69345cffc[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Sat Apr 11 00:00:16 2026 -0500
+
+    "feat: implement full cat movement in 4 directions and summoning via buttons"
+
+[33mcommit 6d8c62c85d2934de75f0cc1d938d62e2e741fc29[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Fri Apr 10 23:28:18 2026 -0500
+
+    "feat: implement cleanCanva and moveLeft functions"
+
+[33mcommit f7120ac13f00ce312772f499bf7b00b613fd6ac1[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Fri Apr 10 19:14:44 2026 -0500
+
+    Refactoring the code using the generic function graphRectangle
+
+[33mcommit 82611cf677ee4b407a217d850de442c68b4aabde[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Fri Apr 10 16:33:17 2026 -0500
+
+    Definition of variables and calculation of cat and food positions
+
+[33mcommit 552ce6cbb09cca61f29af09c8a16e2cc6539bf5f[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Fri Apr 10 15:19:10 2026 -0500
+
+    Correccion - Referencia JS, agrega Canvas con ID areaJuego, obtén el contexto 2D y crea la función graficaGato con onload
+
+[33mcommit f7ba071c9097081047fbd2d29b46b6af7f26c5af[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Thu Apr 9 23:29:19 2026 -0500
+
+    Reference JS, add Canvas with ID areaJuego, get 2D context and create function graficarGato with onload
+
+[33mcommit 797a18f8dd22c13aa773268c3fc8b3cc8805ba3a[m
+Author: Jalexa2305 <alexa090114@gmail.com>
+Date:   Thu Apr 9 22:40:54 2026 -0500
+
+    Initial structure, CSS linking, and username
