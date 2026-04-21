@@ -102,7 +102,7 @@ function detectarColision(){
 
     if( puntos === 6){
       clearInterval(detenerJ);
-      tiempo = 15;
+      tiempo = 15; // cada vez que el gato atrapa la comida 
       detenerJ = setInterval(restarTiempo ,1000);
       return;
     }
