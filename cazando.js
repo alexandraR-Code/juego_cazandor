@@ -18,8 +18,8 @@ let comidaX = 0;
 let comidaY = 0;
 let puntos = 0;
 let tiempo = 15;
-let tiempoMaximo;
 let detenerJ;
+let tiempoInicial = 15;
 
 //Constantes
 const ANCHO_GATO = 50;
@@ -49,6 +49,9 @@ function graficarComida(){
 
 }
 function iniciarJuego(){
+
+  tiempo = tiempoInicial;
+  mostrarEnSpan("tiempo", tiempo);
   //calcular posicion para gato centrado 
   gatoX = 0 + ALTO_GATO;
   gatoY = 0 + ANCHO_GATO;
@@ -80,28 +83,28 @@ function limpiarCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 function moverIzquierda(){
-  gatoX = gatoX -10;
+  gatoX = gatoX -20;
   limpiarCanvas();
   graficarGato();
   graficarComida();
   detectarColision();
 }
 function moverDerecha(){
-  gatoX = gatoX +10;
+  gatoX = gatoX +20;
   limpiarCanvas();
   graficarGato();
   graficarComida();
   detectarColision();
 }
 function moverArriba(){
-  gatoY = gatoY -10;
+  gatoY = gatoY -20;
   limpiarCanvas();
   graficarGato();
   graficarComida();
   detectarColision();
 }
 function moverAbajo(){
-  gatoY = gatoY +10;
+  gatoY = gatoY +20;
   limpiarCanvas();
   graficarGato();
   graficarComida();
@@ -117,20 +120,43 @@ function detectarColision(){
     puntos = puntos + 1;
     mostrarEnSpan("puntaje", puntos);
 
+        // aumentar puntos
+puntos = puntos + 1;
+mostrarEnSpan("puntaje", puntos);
+
+// bajar el tiempo inicial (nivel)
+tiempoInicial--;
+
+// reiniciar el tiempo con el nuevo valor
+tiempo = tiempoInicial;
+
+// mostrar nuevo tiempo
+mostrarEnSpan("tiempo", tiempo);
+
+// reiniciar contador
+clearInterval(detenerJ);
+detenerJ = setInterval(restarTiempo, 1000);
+
+// si se queda sin tiempo
+if (tiempo <= 0) {
+  clearInterval(detenerJ);
+  alert("GAME OVER");
+  location.reload();
+  return;
+}
+
+    // mostrar tiempo actualizado
+    mostrarEnSpan("tiempo", tiempo);
+
+    // si se queda sin tiempo
+    if (tiempo <= 0) {
     clearInterval(detenerJ);
-    tiempo = 15;
-    mostrarEnSpan("tiempo", tiempoMaximo);
-    detenerJ = setInterval(restarTiempo, 1000);
+    alert("GAME OVER");
+    location.reload();
+    return;
+  }
 
-    tiempoMaximo = tiempo -1;
-    document.getElementById("tiempo").value;
 
-    if( puntos === 6){
-      clearInterval(detenerJ);
-      tiempo = 15; // cada vez que el gato atrapa la comida 
-      detenerJ = setInterval(restarTiempo ,1000);
-      return;
-    }
     comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
     comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
     limpiarCanvas();
@@ -141,7 +167,7 @@ function detectarColision(){
 function restarTiempo(){
   tiempo = tiempo -1;
   mostrarEnSpan("tiempo", tiempo);
-  if (tiempo === 0 ){
+  if (tiempo <= 0){
     clearInterval(detenerJ);
     alert("GAME OVER");
     location.reload();
