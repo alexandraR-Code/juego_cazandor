@@ -9,6 +9,7 @@ let comidaX = 0;
 let comidaY = 0;
 let puntos = 0;
 let tiempo = 15;
+let tiempoMaximo;
 let detenerJ;
 
 //Constantes
@@ -91,14 +92,18 @@ function detectarColision(){
       gatoX + ANCHO_GATO > comidaX &&
       gatoY < comidaY + ALTO_COMIDA &&
       gatoY + ALTO_GATO > comidaY) {
+
     
     puntos = puntos + 1;
     mostrarEnSpan("puntaje", puntos);
 
     clearInterval(detenerJ);
     tiempo = 15;
-    mostrarEnSpan("tiempo", tiempo);
+    mostrarEnSpan("tiempo", tiempoMaximo);
     detenerJ = setInterval(restarTiempo, 1000);
+
+    tiempoMaximo = tiempo -1;
+    document.getElementById("tiempo").value;
 
     if( puntos === 6){
       clearInterval(detenerJ);
