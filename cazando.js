@@ -8,7 +8,7 @@ let gatoY = 0;
 let comidaX = 0;
 let comidaY = 0;
 let puntos = 0;
-let tiempo = 20;
+let tiempo = 15;
 let detenerJ;
 
 //Constantes
@@ -96,13 +96,13 @@ function detectarColision(){
     mostrarEnSpan("puntaje", puntos);
 
     clearInterval(detenerJ);
-    tiempo = 20;
+    tiempo = 15;
     mostrarEnSpan("tiempo", tiempo);
     detenerJ = setInterval(restarTiempo, 1000);
 
     if( puntos === 6){
       clearInterval(detenerJ);
-      tiempo = 20;
+      tiempo = 15;
       detenerJ = setInterval(restarTiempo ,1000);
       return;
     }
