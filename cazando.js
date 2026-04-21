@@ -7,6 +7,10 @@ const ctx = canvas.getContext('2d');
 let imagenGato = new Image();
 imagenGato.src = "gato.png";
 
+/// imagen comida
+let imagenComida = new Image();
+imagenComida.src = "comida.png";
+
 //Variables inicializadas en cero 
 let gatoX = 0;
 let gatoY = 0;
@@ -41,7 +45,8 @@ function graficarComida(){
   //ctx.fillStyle = "red";
   // Dibuja un cuadrado en la esquina superior izquierda
   //*ctx.fillRect(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
-  graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, 'red');
+  ctx.drawImage(imagenComida, comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+
 }
 function iniciarJuego(){
   //calcular posicion para gato centrado 
@@ -56,6 +61,10 @@ function iniciarJuego(){
   imagenGato.onload = function() {
   graficarGato();
 }; 
+
+imagenComida.onload = function() {
+  graficarComida();
+};
 
   graficarGato();
   graficarComida();
